@@ -1,0 +1,348 @@
+@import '../index.scss';
+
+// HEADER
+.mobile {
+  display: none;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 5rem 2rem;
+  transition: all ease-in-out 150ms;
+
+  .wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    @include dflex(space-between, center);
+  }
+
+  .logo {
+    width: 35rem;
+    transition: all ease-in-out 150ms;
+  }
+
+  &_nav {
+    @include dflex(space-between, center);
+    gap: 2rem;
+
+    &__item {
+      padding: 1.5rem;
+      color: $light;
+      text-decoration: none;
+      @include fontStyle(1.6rem, 1.2, 500);
+      text-transform: uppercase;
+      letter-spacing: 0.08rem;
+      border-bottom: 2px solid transparent;
+      transition: all ease-in-out 250ms;
+
+      &:hover {
+        border-bottom: 2px solid $light;
+      }
+
+      &--platform {
+        @extend .header_nav__item;
+        border: 1px solid $light;
+        border-radius: 5px;
+
+        &:hover {
+          color: $primary;
+          background-color: $light;
+          border-bottom: 1px solid $light;
+        }
+      }
+    }
+  }
+}
+
+.header.sticky {
+  padding: 1.8rem 2rem;
+  background-color: $primary;
+
+  .logo {
+    width: 24.5rem;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .mobile {
+    display: block;
+  }
+}
+
+
+
+//GLOBAL WEBSITE
+section {
+  padding: 8rem 2rem;
+
+  .wrapper {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+
+    &.shorter {
+      max-width: 1000px;
+    }
+  }
+}
+
+.content {
+  &_info {
+    @extend .grid-2-4;
+    padding: 8rem 2rem;
+  }
+  &_imgs {
+    width: 100%;
+    flex: 1;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.title_secondary {
+  @include fontStyle(3.2rem, 4rem);
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+//HERO
+.hero {
+  width: 100%;
+  min-height: 78vh;
+  @include dflex(center, center);
+  padding: 2rem;
+  background: linear-gradient(
+      76.63deg,
+      #32348d 1.52%,
+      rgba(51, 51, 51, 0.8) 97.59%
+    ),
+    url("../assets/imgs/hero-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+
+  &__title {
+    max-width: 650px;
+    margin-bottom: 2rem;
+    color: $light;
+    @include fontStyle(6rem, 7.2rem);
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    max-width: 650px;
+    color: $light;
+    @include fontStyle(2.5rem, 3.5rem);
+  }
+}
+
+.feature {
+  .wrapper {
+    @include dflex(space-between, flex-start);
+    gap: $gutter;
+  }
+
+  &_element {
+    @extend .grid-1-4;
+    text-align: center;
+
+    imgs {
+      margin-bottom: 2rem;
+    }
+    @include fontStyle(2.5rem, 3rem);
+  }
+}
+
+.about {
+  &.odd {
+    background-color: $bg_light;
+  }
+
+  .wrapper {
+    @include dflex(space-between, stretch);
+    gap: $gutter * 2;
+  }
+  .guitar {
+    background-image: url("../assets/imgs/eletricguitar.jpg");
+  }
+  .violin {
+    background-image: url("../assets/imgs/violin.jpg");
+  }
+
+  .beneficts_item {
+    list-style: none;
+    @include dflex(flex-start, flex-start);
+    margin-bottom: 3rem;
+
+    &__icon {
+      margin-right: 1.2rem;
+    }
+
+    &__title {
+      @include fontStyle(2.2rem, 3.3rem, 700);
+      text-transform: uppercase;
+    }
+
+    &__text {
+      @include fontStyle(1.8rem, 2.7rem);
+      max-width: 420px;
+    }
+  }
+}
+
+// INSTRUMENTS
+.instruments {
+  background-color: $bg_light;
+
+  .grid {
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  .instruments_box {
+    @extend .grid-1-3;
+    background-color: $light;
+    border-radius: 0.5rem;
+    padding: 2.5rem;
+  }
+}
+.genre {
+    &__title {
+      @include fontStyle(2.2rem, 3.3rem,600);
+      text-align: center;
+      text-transform: uppercase;
+      padding-bottom: 1.1rem;
+      border-bottom: 1px solid rgba($gray, 0.5);
+    }
+    ul {
+      list-style: none;
+      padding: 30px 0;
+      
+      li {
+        padding: 1.5rem 0;
+        @include dflex(flex-start, center);
+        gap: 2rem;
+        @include fontStyle(1.8rem,2.7rem);
+        text-transform: uppercase;
+        p {
+        
+        }
+      }
+    }
+  }
+  
+
+// FOOTER
+.footer {
+  .wrapper {
+    @include dflex(space-between, flex-start);
+  }
+
+  &_info {
+    @extend .grid-1-3;
+
+    &__link {
+      color: $dark;
+      @include fontStyle(2rem, 2.7rem);
+      margin-bottom: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: color ease-in-out 150ms;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  &_social {
+    margin-top: 2rem;
+    @include dflex(flex-start, center);
+    gap: 2.5rem;
+    &__item {
+      font-size: 4rem;
+      color: $dark;
+      transition: color ease-in-out 150ms;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  &_form {
+    @extend .grid-2-3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $gutter;
+  }
+
+  .input_group {
+    position: relative;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    padding: 0.5rem;
+
+    &.fullsize {
+      grid-column: 1/3;
+    }
+
+    input,
+    textarea {
+      border: none;
+      width: 100%;
+      // height: 5rem;
+      padding: 1.5rem;
+      @include fontStyle(2rem, 2.7rem);
+      transition: all ease-in 150ms;
+    }
+    textarea {
+      height: 10rem;
+      resize: none;
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      transition: all ease-in 150ms;
+    }
+  }
+
+  .input_btn {
+    grid-column: 1/3;
+    text-align: right;
+
+    & > input {
+      padding: 1.5rem 2.5rem;
+      background-color: $primary;
+      border: none;
+      border-radius: 5px;
+      color: $light;
+      @include fontStyle(1.8rem, 2.7rem);
+      cursor: pointer;
+      transition: all ease-in 150ms;
+
+      &:hover {
+        background-color: $secondary;
+      }
+    }
+  }
+}
+
+// COPYRIGHT
+.copyright {
+  text-align: center;
+  padding: unset;
+
+  p {
+    margin-top: 3rem;
+    @include fontStyle(1.7rem, 1.2);
+    color: $gray;
+  }
+
+  span {
+    display: block;
+    width: 100%;
+    height: 2rem;
+    margin-top: 5rem;
+    background-color: $primary;
+  }
+}
