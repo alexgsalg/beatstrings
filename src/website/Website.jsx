@@ -3,8 +3,9 @@ import './style-website.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-// import { faFacebook } from '@fortawesome/free-brands-svg-icons'
-// import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faFacebook } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import Instruments from '../assets/mock/instruments'
 
 import {ReactComponent as Logo} from "../assets/imgs/logo_negativa.svg"
@@ -42,9 +43,8 @@ function Website() {
 				<Logo/>
 				</a>
 				<div className="mobile">
-            <FontAwesomeIcon icon={["fas", "close"]} />
-				{/* <fa-icon [icon]="openMobile" className="openMobile"></fa-icon>
-				<fa-icon [icon]="closeMobile" className="closeMobile"></fa-icon> */}
+            <FontAwesomeIcon icon={faBars} className="openMobile"/>
+            <FontAwesomeIcon icon={faTimes} className="closeMobile"/>
 				</div>
 				<nav className="header_nav">
 				<a href="#hero" className="header_nav__item">Home</a>
@@ -315,15 +315,15 @@ function Website() {
               >
               <div className="footer_social">
                 {/* </div> */}
-                {/* <a href="#" className="footer_social__item">
-                 //  <fa-icon [icon]="faWhatsapp"></fa-icon
-                ></a>
-                <a href="#" className="footer_social__item"
-                  ><fa-icon [icon]="faInstagram"></fa-icon
-                ></a>
-                <a href="#" className="footer_social__item"
-                  ><fa-icon [icon]="faFacebook"></fa-icon
-                ></a> */}
+                <a href="#" className="footer_social__item">
+                  <FontAwesomeIcon icon={faWhatsapp}/>
+               </a>
+                <a href="#" className="footer_social__item">
+                  <FontAwesomeIcon icon={faInstagram}/>       
+                </a>
+                <a href="#" className="footer_social__item">
+                  <FontAwesomeIcon icon={faFacebook}/>
+                </a>
               </div>
             </div>
             <form action="" className="footer_form" name="contactForm">
