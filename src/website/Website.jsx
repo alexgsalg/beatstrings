@@ -1,5 +1,11 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './style-website.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+// import { faFacebook } from '@fortawesome/free-brands-svg-icons'
+// import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import Instruments from '../assets/mock/instruments'
 
 import {ReactComponent as Logo} from "../assets/imgs/logo_negativa.svg"
 import {ReactComponent as LogoFooter} from "../assets/imgs/logo_footer.svg"
@@ -11,62 +17,32 @@ import Instrument from '../assets/imgs/icon-instrument.png';
 
 function Website() {
 
-   const instruments = [
-      {
-        id: 0,
-        title: 'Erudito',
-        set: [
-          {
-            title: 'Violino',
-            img: '../assets/imgs/inst-violin.png',
-          },
-          { title: 'Saxophone', img: '../assets/imgs/inst-sax.png' },
-          {
-            title: 'Teclado / Piano',
-            img: '../assets/imgs/inst-piano.png',
-          },
-        ],
-      },
-      {
-        id: 1,
-        title: 'Popular',
-        set: [
-          {
-            title: 'Guitar',
-            img: '../assets/imgs/inst-eletricguitar.png',
-          },
-          { title: 'Violão', img: '../assets/imgs/inst-guitar.png' },
-          { title: 'Baixo', img: '../assets/imgs/inst-bass.png' },
-        ],
-      },
-      {
-        id: 2,
-        title: 'Teoria musical',
-        set: [
-          {
-            title: 'Inicialização',
-            img: '../assets/imgs/inst-pick.png',
-          },
-          {
-            title: 'Teoria avançada',
-            img: '../assets/imgs/inst-pick.png',
-          },
-          {
-            title: 'Musicalização infantil',
-            img: '../assets/imgs/inst-pick.png',
-          },
-        ],
-      },
-    ];
+   const [farFromTop, setFarFromTop] = useState(false)
+
+   const scrollEvent = (e) => {
+      const scrollFromTop = window.pageYOffset;
+  
+      if (scrollFromTop >= 150) {
+        setFarFromTop(true)
+      } else {
+         setFarFromTop(false)
+      }
+    }
+
+   useEffect(() => {
+      window.addEventListener('scroll', scrollEvent);
+      return
+   }, [])
 
 	return (
 		<>
-		<header className="header" >
+		<header className={`header ${farFromTop ? 'sticky' : ''}`} >
 			<div className="wrapper">
 				<a href="/" className="logo">
 				<Logo/>
 				</a>
 				<div className="mobile">
+            <FontAwesomeIcon icon={["fas", "close"]} />
 				{/* <fa-icon [icon]="openMobile" className="openMobile"></fa-icon>
 				<fa-icon [icon]="closeMobile" className="closeMobile"></fa-icon> */}
 				</div>
@@ -310,12 +286,12 @@ function Website() {
             <h2 className="title_secondary center"><strong>O que</strong> ensinamos</h2>
             <div className="grid">
                {/* Loop de instruments */}
-               {instruments.map(item => 
+               {Instruments.map(item => 
                   <div className="genre" key={item.title}>
                      <h4 className="genre__title">{item.title}</h4>
                      <ul>
                         {item.set.map(instrument => 
-                           <li className="genre__Item" key={instrument.title}>
+                           <li className="genre__item" key={instrument.title}>
                               <img src={ instrument.img } alt="" />
                               <p>{instrument.title}</p>
                            </li>
