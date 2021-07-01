@@ -1,5 +1,40 @@
 @import '../index.scss';
 
+//GLOBAL WEBSITE
+section, footer {
+    padding: 8rem 2rem;
+  
+    .wrapper {
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+  
+      &.shorter {
+        max-width: 1000px;
+      }
+    }
+  }
+  
+  .content {
+    &_info {
+      @extend .grid-2-4;
+      padding: 8rem 2rem;
+    }
+    &_img {
+      width: 100%;
+      flex: 1;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  
+  .title_secondary {
+    @include fontStyle(3.2rem, 4rem);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+  }
+
 // HEADER
 .mobile {
   display: none;
@@ -31,13 +66,14 @@
       padding: 1.5rem;
       color: $light;
       text-decoration: none;
-      @include fontStyle(1.6rem, 1.2, 500);
+      @include fontStyle(1.85rem, 1.2, 500);
       text-transform: uppercase;
-      letter-spacing: 0.08rem;
+      letter-spacing: 0.1rem;
+      cursor: pointer;
       border-bottom: 2px solid transparent;
       transition: all ease-in-out 250ms;
 
-      &:hover {
+      &:hover, &.active {
         border-bottom: 2px solid $light;
       }
 
@@ -71,42 +107,6 @@
   }
 }
 
-
-
-//GLOBAL WEBSITE
-section {
-  padding: 8rem 2rem;
-
-  .wrapper {
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-
-    &.shorter {
-      max-width: 1000px;
-    }
-  }
-}
-
-.content {
-  &_info {
-    @extend .grid-2-4;
-    padding: 8rem 2rem;
-  }
-  &_img {
-    width: 100%;
-    flex: 1;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-}
-
-.title_secondary {
-  @include fontStyle(3.2rem, 4rem);
-  margin-bottom: 3rem;
-  text-transform: uppercase;
-}
 
 //HERO
 .hero {
@@ -146,6 +146,7 @@ section {
   }
 
   &_element {
+      max-width: 300px;
     @extend .grid-1-4;
     text-align: center;
 
@@ -209,6 +210,11 @@ section {
   }
 }
 .genre {
+    background: $light;
+    width: 31%;
+    padding: 3rem 2rem 1rem;
+    border-radius: 10px;
+
     &__title {
       @include fontStyle(2.2rem, 3.3rem,600);
       text-align: center;
@@ -236,9 +242,15 @@ section {
 
 // FOOTER
 .footer {
-  .wrapper {
-    @include dflex(space-between, flex-start);
-  }
+    padding: 12rem 2rem;
+    border-bottom: 2rem solid $primary;
+
+    .wrapper {
+        @include dflex(space-between, flex-start);
+        .shorter {
+            max-width: 1000px;
+        }
+    }
 
   &_info {
     @extend .grid-1-3;
@@ -325,24 +337,17 @@ section {
       }
     }
   }
-}
-
-// COPYRIGHT
-.copyright {
-  text-align: center;
-  padding: unset;
-
-  p {
-    margin-top: 3rem;
-    @include fontStyle(1.7rem, 1.2);
-    color: $gray;
-  }
-
-  span {
-    display: block;
-    width: 100%;
-    height: 2rem;
-    margin-top: 5rem;
-    background-color: $primary;
+  // COPYRIGHT
+  .copyright {
+    padding: 20vh 0 2rem;
+    text-align: center;
+  
+    p {
+      margin-top: 3rem;
+      @include fontStyle(1.7rem, 1.2);
+      color: $gray;
+    }
+  
   }
 }
+

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { Link } from 'react-scroll'
 import './style-website.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
@@ -47,16 +48,16 @@ function Website() {
             <FontAwesomeIcon icon={faTimes} className="closeMobile"/>
 				</div>
 				<nav className="header_nav">
-				<a href="#hero" className="header_nav__item">Home</a>
-				<a href="#about" className="header_nav__item">sobre</a>
-				<a href="#instruments" className="header_nav__item">Instrumentos</a>
-				<a href="#contact" className="header_nav__item">Contato</a>
-				<a href="#hero" className="header_nav__item--platform">Acesse a plataforma</a>
+            <Link className="header_nav__item" activeClass="active" to="hero" spy={true} smooth={true} duration={1000}>Home</Link>
+            <Link className="header_nav__item" activeClass="active" to="about" spy={true} smooth={true} duration={1000}>Sobre</Link>
+            <Link className="header_nav__item" activeClass="active" to="instruments" spy={true} smooth={true} duration={1000}>Instrumentos</Link>
+            <Link className="header_nav__item" activeClass="active" to="contact" spy={true} smooth={true} duration={1000}>Contato</Link>
+				<a href="#hero" className="header_nav__item--platform" activeClass="active">Acesse a plataforma</a>
 				</nav>
 			</div>
 		</header>
     <main className="main">
-      <section className="hero">
+      <section className="hero" id="hero">
         <div className="wrapper">
           <h1 className="hero__title">
             <strong>Aprenda a Deixar</strong> a música fluir
@@ -303,59 +304,59 @@ function Website() {
           </div>
         </section>
 
-        <section id="contact" className="footer">
-          <div className="wrapper shorter">
-            <div className="footer_info">
-              <h2 className="title_secondary"><strong>Fale</strong> conosco</h2>
-              <a href="mailto:contato@beatstrings.com.br" className="footer_info__link"
-                >contato@beatstrings.com.br</a
-              >
-              <a href="tel:+5561999999999" className="footer_info__link"
-                >(61) 99999-9999</a
-              >
-              <div className="footer_social">
-                {/* </div> */}
-                <a href="#" className="footer_social__item">
-                  <FontAwesomeIcon icon={faWhatsapp}/>
-               </a>
-                <a href="#" className="footer_social__item">
-                  <FontAwesomeIcon icon={faInstagram}/>       
-                </a>
-                <a href="#" className="footer_social__item">
-                  <FontAwesomeIcon icon={faFacebook}/>
-                </a>
-              </div>
+        <footer id="contact" className="footer">
+            <div className="wrapper shorter">
+               <div className="footer_info">
+               <h2 className="title_secondary"><strong>Fale</strong> conosco</h2>
+               <a href="mailto:contato@beatstrings.com.br" className="footer_info__link"
+                  >contato@beatstrings.com.br</a
+               >
+               <a href="tel:+5561999999999" className="footer_info__link"
+                  >(61) 99999-9999</a
+               >
+               <div className="footer_social">
+                  {/* </div> */}
+                  <a href="#" className="footer_social__item">
+                     <FontAwesomeIcon icon={faWhatsapp}/>
+                  </a>
+                  <a href="#" className="footer_social__item">
+                     <FontAwesomeIcon icon={faInstagram}/>       
+                  </a>
+                  <a href="#" className="footer_social__item">
+                     <FontAwesomeIcon icon={faFacebook}/>
+                  </a>
+               </div>
+               </div>
+               <form action="" className="footer_form" name="contactForm">
+               <div className="input_group">
+                  <input
+                     type="text"
+                     name="nome"
+                     id="nome"
+                     placeholder="Digite seu nome"
+                  />
+               </div>
+               <div className="input_group">
+                  <input type="mail" name="email" placeholder="Digite seu e-mail" />
+               </div>
+               <div className="input_group fullsize">
+                  <textarea
+                     type="text"
+                     name="mensagem"
+                     placeholder="Qual a sua dúvida?"
+                  ></textarea>
+               </div>
+               <div className="input_btn">
+                  <input type="submit" value="Enviar mensagem" />
+               </div>
+               </form>
             </div>
-            <form action="" className="footer_form" name="contactForm">
-              <div className="input_group">
-                <input
-                  type="text"
-                  name="nome"
-                  id="nome"
-                  placeholder="Digite seu nome"
-                />
-              </div>
-              <div className="input_group">
-                <input type="mail" name="email" placeholder="Digite seu e-mail" />
-              </div>
-              <div className="input_group fullsize">
-                <textarea
-                  type="text"
-                  name="mensagem"
-                  placeholder="Qual a sua dúvida?"
-                ></textarea>
-              </div>
-              <div className="input_btn">
-                <input type="submit" value="Enviar mensagem" />
-              </div>
-            </form>
-          </div>
-        </section>
-        <section className="copyright">
-         <LogoFooter/>
-          <p>Direitos reservados BeatStrings 2021</p>
-          <span></span>
-        </section>
+            <div className="copyright">
+               <LogoFooter/>
+               <p>Direitos reservados BeatStrings 2021</p>
+               <span></span>
+            </div>
+        </footer>
       </main>
 		</>
 	)
