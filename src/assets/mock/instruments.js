@@ -12,45 +12,45 @@ const Instruments = [
         id: 0,
         title: 'Erudito',
         set: [
-        {
-            title: 'Violino',
-            img: violin,
-        },
-        { title: 'Saxophone', img: sax },
-        {
-            title: 'Teclado / Piano',
-            img: piano,
-        },
+            {
+                title: 'Violino',
+                img: violin,
+            },
+            { title: 'Saxophone', img: sax },
+            {
+                title: 'Teclado / Piano',
+                img: piano,
+            },
         ],
     },
     {
         id: 1,
         title: 'Popular',
         set: [
-        {
-            title: 'Guitar',
-            img: eletricguitar,
-        },
-        { title: 'Violão', img: guitar },
-        { title: 'Baixo', img: bass },
+            {
+                title: 'Guitar',
+                img: eletricguitar,
+            },
+            { title: 'Violão', img: guitar },
+            { title: 'Baixo', img: bass },
         ],
     },
     {
         id: 2,
         title: 'Teoria musical',
         set: [
-        {
-            title: 'Inicialização',
-            img: pick,
-        },
-        {
-            title: 'Teoria avançada',
-            img: pick,
-        },
-        {
-            title: 'Musicalização infantil',
-            img: pick,
-        },
+            {
+                title: 'Inicialização',
+                img: pick,
+            },
+            {
+                title: 'Teoria avançada',
+                img: pick,
+            },
+            {
+                title: 'Musicalização infantil',
+                img: pick,
+            },
         ],
     },
 ];
