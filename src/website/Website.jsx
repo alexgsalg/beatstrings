@@ -33,6 +33,7 @@ function Website() {
 
    useEffect(() => {
       window.addEventListener('scroll', scrollEvent);
+      
       return
    }, [])
 
@@ -57,39 +58,43 @@ function Website() {
 			</div>
 		</header>
     <main className="main">
-      <section className="hero" id="hero">
-        <div className="wrapper">
-          <h1 className="hero__title">
-            <strong>Aprenda a Deixar</strong> a música fluir
-          </h1>
-          <p className="hero__subtitle">Uma nova forma de aprender um instrumento</p>
-        </div>
-      </section>
-
-        {/* <!-- FEATURES --> */}
-        <section className="feature">
+      {/* <!-- HERO --> */}
+      <div id="hero">
+        <section className="hero">
           <div className="wrapper">
-            <div className="feature_element">
-              <img src={Classes} alt="" />
-              <p>Aulas online, presenciais e videoaulas</p>
-            </div>
-            <div className="feature_element">
-              <img src={Books} alt="" />
-              <p>Material de estudo disponível na plataforma</p>
-            </div>
-            <div className="feature_element">
-              <img src={Support} alt="" />
-              <p>Suporte diretamente com o professor</p>
-            </div>
-            <div className="feature_element">
-              <img src={Instrument} alt="" />
-              <p>Instrumentos e acessórios</p>
-            </div>
+            <h1 className="hero__title">
+              <strong>Aprenda a Deixar</strong> a música fluir
+            </h1>
+            <p className="hero__subtitle">Uma nova forma de aprender um instrumento</p>
           </div>
         </section>
 
-        {/* <!-- ABOUT --> */}
-        <section className="about odd" id="about">
+        {/* <!-- FEATURES --> */}
+        <section className="feature">
+        <div className="wrapper">
+          <div className="feature_element">
+            <img src={Classes} alt="" />
+            <p>Aulas online, presenciais e videoaulas</p>
+          </div>
+          <div className="feature_element">
+            <img src={Books} alt="" />
+            <p>Material de estudo disponível na plataforma</p>
+          </div>
+          <div className="feature_element">
+            <img src={Support} alt="" />
+            <p>Suporte diretamente com o professor</p>
+          </div>
+          <div className="feature_element">
+            <img src={Instrument} alt="" />
+            <p>Instrumentos e acessórios</p>
+          </div>
+        </div>
+      </section>
+      </div>
+
+      {/* <!-- ABOUT --> */}
+      <div id="about">
+        <section className="about odd">
           <div className="wrapper">
             <div className="content_info">
               <h2 className="title_secondary"><strong>Beat</strong> Strings</h2>
@@ -281,81 +286,82 @@ function Website() {
             </div>
           </div>
         </section>
+      </div>
 
-        <section className="instruments" id="instruments">
-          <div className="wrapper shorter">
-            <h2 className="title_secondary center"><strong>O que</strong> ensinamos</h2>
-            <div className="grid">
-               {/* Loop de instruments */}
-               {Instruments.map(item => 
-                  <div className="genre" key={item.title}>
-                     <h4 className="genre__title">{item.title}</h4>
-                     <ul>
-                        {item.set.map(instrument => 
-                           <li className="genre__item" key={instrument.title}>
-                              <img src={ instrument.img } alt="" />
-                              <p>{instrument.title}</p>
-                           </li>
-                        )}
-                     </ul>
-                  </div>
-               )}
+      <section className="instruments" id="instruments">
+        <div className="wrapper shorter">
+          <h2 className="title_secondary center"><strong>O que</strong> ensinamos</h2>
+          <div className="grid">
+              {/* Loop de instruments */}
+              {Instruments.map(item => 
+                <div className="genre" key={item.title}>
+                    <h4 className="genre__title">{item.title}</h4>
+                    <ul>
+                      {item.set.map(instrument => 
+                          <li className="genre__item" key={instrument.title}>
+                            <img src={ instrument.img } alt="" />
+                            <p>{instrument.title}</p>
+                          </li>
+                      )}
+                    </ul>
+                </div>
+              )}
+          </div>
+        </div>
+      </section>
+
+      <footer id="contact" className="footer">
+        <div className="wrapper shorter">
+          <div className="footer_info">
+            <h2 className="title_secondary"><strong>Fale</strong> conosco</h2>
+            <a href="mailto:contato@beatstrings.com.br" className="footer_info__link"
+              >contato@beatstrings.com.br</a
+            >
+            <a href="tel:+5561999999999" className="footer_info__link"
+              >(61) 99999-9999</a
+            >
+            <div className="footer_social">
+              {/* </div> */}
+              <a href="#" className="footer_social__item">
+                  <FontAwesomeIcon icon={faWhatsapp}/>
+              </a>
+              <a href="#" className="footer_social__item">
+                  <FontAwesomeIcon icon={faInstagram}/>       
+              </a>
+              <a href="#" className="footer_social__item">
+                  <FontAwesomeIcon icon={faFacebook}/>
+              </a>
             </div>
           </div>
-        </section>
-
-        <footer id="contact" className="footer">
-            <div className="wrapper shorter">
-               <div className="footer_info">
-               <h2 className="title_secondary"><strong>Fale</strong> conosco</h2>
-               <a href="mailto:contato@beatstrings.com.br" className="footer_info__link"
-                  >contato@beatstrings.com.br</a
-               >
-               <a href="tel:+5561999999999" className="footer_info__link"
-                  >(61) 99999-9999</a
-               >
-               <div className="footer_social">
-                  {/* </div> */}
-                  <a href="#" className="footer_social__item">
-                     <FontAwesomeIcon icon={faWhatsapp}/>
-                  </a>
-                  <a href="#" className="footer_social__item">
-                     <FontAwesomeIcon icon={faInstagram}/>       
-                  </a>
-                  <a href="#" className="footer_social__item">
-                     <FontAwesomeIcon icon={faFacebook}/>
-                  </a>
-               </div>
-               </div>
-               <form action="" className="footer_form" name="contactForm">
-               <div className="input_group">
-                  <input
-                     type="text"
-                     name="nome"
-                     id="nome"
-                     placeholder="Digite seu nome"
-                  />
-               </div>
-               <div className="input_group">
-                  <input type="mail" name="email" placeholder="Digite seu e-mail" />
-               </div>
-               <div className="input_group fullsize">
-                  <textarea
-                     type="text"
-                     name="mensagem"
-                     placeholder="Qual a sua dúvida?"
-                  ></textarea>
-               </div>
-               <div className="input_btn">
-                  <input type="submit" value="Enviar mensagem" />
-               </div>
-               </form>
-            </div>
-            <div className="copyright">
-               <LogoFooter/>
-               <p>Direitos reservados BeatStrings 2021</p>
-               <span></span>
-            </div>
+            <form action="" className="footer_form" name="contactForm">
+              <div className="input_group">
+                <input
+                    type="text"
+                    name="nome"
+                    id="nome"
+                    placeholder="Digite seu nome"
+                />
+              </div>
+              <div className="input_group">
+                <input type="mail" name="email" placeholder="Digite seu e-mail" />
+              </div>
+              <div className="input_group fullsize">
+                <textarea
+                    type="text"
+                    name="mensagem"
+                    placeholder="Qual a sua dúvida?"
+                ></textarea>
+              </div>
+              <div className="input_btn">
+                <input type="submit" value="Enviar mensagem" />
+              </div>
+            </form>
+          </div>
+          <div className="copyright">
+              <LogoFooter/>
+              <p>Direitos reservados BeatStrings 2021</p>
+              <span></span>
+          </div>
         </footer>
       </main>
 		</>

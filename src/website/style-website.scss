@@ -2,7 +2,7 @@
 
 //GLOBAL WEBSITE
 section, footer {
-    padding: 8rem 2rem;
+    padding: 10rem 2rem;
   
     .wrapper {
       width: 100%;
@@ -242,7 +242,7 @@ section, footer {
 
 // FOOTER
 .footer {
-    padding: 12rem 2rem;
+    padding: 15rem 2rem;
     border-bottom: 2rem solid $primary;
 
     .wrapper {
@@ -328,7 +328,9 @@ section, footer {
       border: none;
       border-radius: 5px;
       color: $light;
-      @include fontStyle(1.8rem, 2.7rem);
+      @include fontStyle(1.85rem, 2.7rem);
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
       cursor: pointer;
       transition: all ease-in 150ms;
 
