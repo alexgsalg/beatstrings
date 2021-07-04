@@ -1,0 +1,503 @@
+@import "../index.scss";
+
+//GLOBAL WEBSITE
+section,
+footer {
+  padding: 10rem 2rem;
+
+  .wrapper {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+
+    &.shorter {
+      max-width: 1000px;
+    }
+  }
+}
+
+.content {
+  &_info {
+    @extend .grid-2-4;
+    padding: 8rem 2rem;
+  }
+  &_img {
+    width: 100%;
+    flex: 1;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.title_secondary {
+  @include fontStyle(3.2rem, 4rem);
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+// HEADER
+.mobile {
+  display: none;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 5rem 2rem;
+  transition: all ease-in-out 150ms;
+  z-index: 999;
+
+  .wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    @include dflex(space-between, center);
+  }
+
+  .logo {
+    width: 35rem;
+    transition: all ease-in-out 150ms;
+  }
+
+  &_nav {
+    @include dflex(space-between, center);
+    gap: 2rem;
+
+    &__item {
+      padding: 1.5rem;
+      color: $light;
+      text-decoration: none;
+      @include fontStyle(1.85rem, 1.2, 500);
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all ease-in-out 250ms;
+
+      &:hover,
+      &.active {
+        border-bottom: 2px solid $light;
+      }
+
+      &--platform {
+        @extend .header_nav__item;
+        border: 1px solid $light;
+        border-radius: 5px;
+        text-align: center;
+
+        &:hover {
+          color: $primary;
+          background-color: $light;
+          border-bottom: 1px solid $light;
+        }
+      }
+    }
+  }
+}
+
+.header.sticky {
+  padding: 1.8rem 2rem;
+  background-color: $primary;
+
+  .logo {
+    width: 24.5rem;
+  }
+}
+
+//HERO
+.hero {
+  width: 100%;
+  min-height: 78vh;
+  @include dflex(center, center);
+  padding: 2rem;
+  background: linear-gradient(
+      76.63deg,
+      #32348d 1.52%,
+      rgba(51, 51, 51, 0.8) 97.59%
+    ),
+    url("../assets/imgs/hero-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+
+  &__title {
+    max-width: 650px;
+    margin-bottom: 2rem;
+    color: $light;
+    @include fontStyle(6rem, 7.2rem);
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    max-width: 650px;
+    color: $light;
+    @include fontStyle(2.5rem, 3.5rem);
+  }
+}
+
+.feature {
+  .wrapper {
+    @include dflex(space-between, flex-start);
+    gap: $gutter;
+  }
+
+  &_element {
+    max-width: 300px;
+    @extend .grid-1-4;
+    text-align: center;
+
+    imgs {
+      margin-bottom: 2rem;
+    }
+    @include fontStyle(2.5rem, 3rem);
+  }
+}
+
+.about {
+  &.odd {
+    background-color: $bg_light;
+  }
+
+  .wrapper {
+    @include dflex(space-between, stretch);
+    gap: $gutter * 2;
+  }
+  .guitar {
+    background-image: url("../assets/imgs/eletricguitar.jpg");
+  }
+  .violin {
+    background-image: url("../assets/imgs/violin.jpg");
+  }
+
+  .beneficts_item {
+    list-style: none;
+    @include dflex(flex-start, flex-start);
+    margin-bottom: 3rem;
+
+    &__icon {
+      margin-right: 1.2rem;
+    }
+
+    &__title {
+      @include fontStyle(2.2rem, 3.3rem, 700);
+      text-transform: uppercase;
+    }
+
+    &__text {
+      @include fontStyle(1.8rem, 2.7rem);
+      max-width: 420px;
+    }
+  }
+}
+
+// INSTRUMENTS
+.instruments {
+  background-color: $bg_light;
+
+  .grid {
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  .instruments_box {
+    @extend .grid-1-3;
+    background-color: $light;
+    border-radius: 0.5rem;
+    padding: 2.5rem;
+  }
+}
+.genre {
+  background: $light;
+  width: 31%;
+  padding: 3rem 2rem 1rem;
+  border-radius: 10px;
+
+  &__title {
+    @include fontStyle(2.2rem, 3.3rem, 600);
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid rgba($gray, 0.5);
+  }
+  ul {
+    list-style: none;
+    padding: 30px 0;
+
+    li {
+      padding: 1.5rem 0;
+      @include dflex(flex-start, center);
+      gap: 2rem;
+      @include fontStyle(1.8rem, 2.7rem);
+      text-transform: uppercase;
+      p {
+      }
+    }
+  }
+}
+
+// FOOTER
+.footer {
+  padding: 15rem 2rem;
+  border-bottom: 2rem solid $primary;
+
+  .wrapper {
+    @include dflex(space-between, flex-start);
+    .shorter {
+      max-width: 1000px;
+    }
+  }
+
+  &_info {
+    @extend .grid-1-3;
+
+    &__link {
+      color: $dark;
+      @include fontStyle(2rem, 2.7rem);
+      margin-bottom: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: color ease-in-out 150ms;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  &_social {
+    margin-top: 2rem;
+    @include dflex(flex-start, center);
+    gap: 2.5rem;
+    &__item {
+      font-size: 4rem;
+      color: $dark;
+      transition: color ease-in-out 150ms;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  &_form {
+    @extend .grid-2-3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $gutter;
+  }
+
+  .input_group {
+    position: relative;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    padding: 0.5rem;
+
+    &.fullsize {
+      grid-column: 1/3;
+    }
+
+    input,
+    textarea {
+      border: none;
+      width: 100%;
+      // height: 5rem;
+      padding: 1.5rem;
+      @include fontStyle(2rem, 2.7rem);
+      transition: all ease-in 150ms;
+    }
+    textarea {
+      height: 10rem;
+      resize: none;
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      transition: all ease-in 150ms;
+    }
+  }
+
+  .input_btn {
+    grid-column: 1/3;
+    text-align: right;
+
+    & > input {
+      height: 60px;
+      padding: 1.5rem 2.5rem;
+      background-color: $primary;
+      color: $light;
+      @include fontStyle(1.85rem, 2.7rem);
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all ease-in 150ms;
+
+      &:hover {
+        background-color: $secondary;
+      }
+    }
+  }
+  // COPYRIGHT
+  .copyright {
+    padding: 20vh 0 2rem;
+    text-align: center;
+
+    p {
+      margin-top: 3rem;
+      @include fontStyle(1.7rem, 1.2);
+      color: $gray;
+    }
+  }
+}
+
+/* Tablets ==================================================================*/
+@media screen and (max-width: 770px) {
+  .mobile {
+    display: block;
+
+    .openMobile,
+    .closeMobile {
+      width: 30px;
+      height: 30px;
+      path {
+        fill: $light;
+      }
+    }
+  }
+  .header_nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    min-height: 100vh;
+    min-width: 50%;
+    background-color: $primary;
+    padding: 2vh 2.5rem 3rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 9999;
+    transition: all 250ms ease-in-out;
+
+    &__item {
+      display: block;
+      width: 100%;
+      padding: 2.5rem;
+
+      &--platform {
+        text-align: center;
+      }
+    }
+
+    &.open {
+      left: 0;
+    }
+  }
+  .content_info {
+    position: relative;
+    width: 80%;
+    margin-right: -20%;
+    margin-left: 0;
+    /* background-color: white; */
+  }
+  .violin + .content_info {
+    margin-left: -20%;
+    margin-right: 0;
+  }
+
+  .content_img {
+    opacity: 0.1;
+  }
+}
+
+/* Smartphone ==================================================================*/
+@media screen and (max-width: 470px) {
+  .header {
+    padding: 3rem 2rem;
+
+    &_nav {
+      padding-top: 6rem;
+    }
+  }
+  section,
+  footer {
+    padding: 5rem 2rem;
+  }
+  .feature {
+    .wrapper {
+      flex-wrap: wrap;
+      gap: 5rem 1rem;
+    }
+    .feature_element {
+      width: 46%;
+      img {
+        height: 40px;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+  .about {
+    padding: 0;
+
+    &.odd {
+      .wrapper {
+        flex-wrap: wrap-reverse;
+      }
+    }
+    .wrapper {
+      flex-wrap: wrap;
+    }
+  }
+  .content_info {
+    width: 100%;
+    margin: 0;
+    padding: 0 2rem 10rem;
+  }
+  .content_img {
+    opacity: 0.8;
+    height: 200px;
+    flex: unset;
+  }
+  .violin + .content_info {
+    margin: 0;
+    padding-bottom: 6rem;
+  }
+  #instruments .grid {
+    justify-content: center;
+    .genre {
+      width: 90%;
+    }
+  }
+  .footer {
+    padding: 7rem 2rem;
+    .wrapper {
+      flex-wrap: wrap;
+    }
+    &_info,
+    &_form {
+      width: 100%;
+      margin-bottom: 6rem;
+    }
+    &_info__link {
+      display: block;
+    }
+
+    &_social {
+      align-items: center;
+      .footer_social__item {
+        font-size: 5rem;
+        margin-right: 2rem;
+      }
+    }
+    .footer_form {
+      grid-template-columns: 1fr;
+      .fullsize,
+      .input_btn {
+        grid-column: 1/2;
+      }
+    }
+    .copyright {
+      padding: 5rem 0 2rem;
+    }
+  }
+}
