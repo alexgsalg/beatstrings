@@ -9,30 +9,24 @@ function Login() {
     <main className="auth">
       <div className="auth_info">
         <Logo className="logo" />
-        <form action="" className="auth_form">
-          <h1 className="auth_form__title">Login</h1>
+        <form action="/login" className="auth_form">
+          <h1 className="auth_form__title">Recuperar senha</h1>
+          <p className="password_info">
+            Para recuperar sua senha insira seu email no campo abaixo para
+            receber seu token de acesso.
+          </p>
           <div className="auth_form__input">
             <input type="mail" name="email" placeholder="Digite seu e-mail" />
-          </div>
-          <div className="auth_form__input">
-            <input
-              type="password"
-              name="password"
-              placeholder="Digite sua senha"
-            />
           </div>
           <input
             type="submit"
             className="auth_form__btn"
-            value="Acessar conta"
+            value="Receber token"
           />
-          <div className="forgot_pass">
-            <NavLink to="/esqueci-senha">Esqueci a senha</NavLink>
-          </div>
         </form>
       </div>
       <div className="auth_side">
-        <NavLink to="/" className="nav__item">
+        <NavLink to="/login" className="nav__item">
           Voltar a home
         </NavLink>
         <p className="citation">Lorem ipsum dolor sit amet, consectetur</p>

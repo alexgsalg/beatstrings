@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import { NavLink } from "react-router-dom";
 import "./style-Homepage.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -99,13 +100,9 @@ function Website() {
             >
               Contato
             </Link>
-            <a
-              href="#hero"
-              className="header_nav__item--platform"
-              activeClass="active"
-            >
+            <NavLink to="/login" className="header_nav__item--platform">
               Acesse a plataforma
-            </a>
+            </NavLink>
           </nav>
         </div>
       </header>

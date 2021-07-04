@@ -318,14 +318,15 @@ footer {
     text-align: right;
 
     & > input {
+      height: 60px;
       padding: 1.5rem 2.5rem;
       background-color: $primary;
-      border: none;
-      border-radius: 5px;
       color: $light;
       @include fontStyle(1.85rem, 2.7rem);
       letter-spacing: 0.1rem;
       text-transform: uppercase;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
       transition: all ease-in 150ms;
 
