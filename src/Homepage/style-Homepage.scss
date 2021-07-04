@@ -47,6 +47,7 @@ footer {
   left: 0;
   padding: 5rem 2rem;
   transition: all ease-in-out 150ms;
+  z-index: 999;
 
   .wrapper {
     max-width: 1300px;
@@ -83,6 +84,7 @@ footer {
         @extend .header_nav__item;
         border: 1px solid $light;
         border-radius: 5px;
+        text-align: center;
 
         &:hover {
           color: $primary;
@@ -100,12 +102,6 @@ footer {
 
   .logo {
     width: 24.5rem;
-  }
-}
-
-@media screen and (max-width: 770px) {
-  .mobile {
-    display: block;
   }
 }
 
@@ -351,6 +347,7 @@ footer {
   }
 }
 
+/* Tablets ==================================================================*/
 @media screen and (max-width: 770px) {
   .mobile {
     display: block;
@@ -390,6 +387,116 @@ footer {
 
     &.open {
       left: 0;
+    }
+  }
+  .content_info {
+    position: relative;
+    width: 80%;
+    margin-right: -20%;
+    margin-left: 0;
+    /* background-color: white; */
+  }
+  .violin + .content_info {
+    margin-left: -20%;
+    margin-right: 0;
+  }
+
+  .content_img {
+    opacity: 0.1;
+  }
+}
+
+/* Smartphone ==================================================================*/
+@media screen and (max-width: 470px) {
+  .header {
+    padding: 3rem 2rem;
+
+    &_nav {
+      padding-top: 6rem;
+    }
+  }
+  section,
+  footer {
+    padding: 5rem 2rem;
+  }
+  .feature {
+    .wrapper {
+      flex-wrap: wrap;
+      gap: 5rem 1rem;
+    }
+    .feature_element {
+      width: 46%;
+      img {
+        height: 40px;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+  .about {
+    padding: 0;
+
+    &.odd {
+      .wrapper {
+        flex-wrap: wrap-reverse;
+      }
+    }
+    .wrapper {
+      flex-wrap: wrap;
+    }
+  }
+  .content_info {
+    width: 100%;
+    margin: 0;
+    padding: 0 2rem 10rem;
+  }
+  .content_img {
+    opacity: 0.8;
+    height: 200px;
+    flex: unset;
+  }
+  .violin + .content_info {
+    margin: 0;
+    padding-bottom: 6rem;
+  }
+  #instruments .grid {
+    justify-content: center;
+    .genre {
+      width: 90%;
+    }
+  }
+  .footer {
+    padding: 7rem 2rem;
+    .wrapper {
+      flex-wrap: wrap;
+    }
+    &_info,
+    &_form {
+      width: 100%;
+      margin-bottom: 6rem;
+    }
+    &_info__link {
+      display: block;
+    }
+
+    &_social {
+      align-items: center;
+      .footer_social__item {
+        font-size: 5rem;
+        margin-right: 2rem;
+      }
+    }
+    .footer_form {
+      grid-template-columns: 1fr;
+      .fullsize,
+      .input_btn {
+        grid-column: 1/2;
+      }
+    }
+    .copyright {
+      padding: 5rem 0 2rem;
     }
   }
 }
