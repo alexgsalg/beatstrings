@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import "./style-Homepage.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
 import {
-  faFacebook,
   faInstagram,
   faWhatsapp,
+  // faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import Instruments from "../assets/mock/instruments";
 
@@ -56,8 +56,6 @@ function Website() {
               icon={isMenuOpen ? faTimes : faBars}
               className="openMobile"
             />
-            {/* <FontAwesomeIcon icon={faBars} className="openMobile" /> */}
-            {/* <FontAwesomeIcon icon={faTimes} className="closeMobile" /> */}
           </div>
           <nav className={`header_nav ${isMenuOpen ? "open" : ""}`}>
             <Link
@@ -100,9 +98,9 @@ function Website() {
             >
               Contato
             </Link>
-            <NavLink to="/login" className="header_nav__item--platform">
+            {/* <NavLink to="/login" className="header_nav__item--platform">
               Acesse a plataforma
-            </NavLink>
+            </NavLink> */}
           </nav>
         </div>
       </header>
@@ -115,7 +113,7 @@ function Website() {
                 <strong>Aprenda a Deixar</strong> a música fluir
               </h1>
               <p className="hero__subtitle">
-                Uma nova forma de aprender um instrumento
+                Uma nova forma de aprender seu instrumento
               </p>
             </div>
           </section>
@@ -125,11 +123,11 @@ function Website() {
             <div className="wrapper">
               <div className="feature_element">
                 <img src={Classes} alt="" />
-                <p>Aulas online, presenciais e videoaulas</p>
+                <p>Aulas online e presenciais</p>
               </div>
               <div className="feature_element">
                 <img src={Books} alt="" />
-                <p>Material de estudo disponível na plataforma</p>
+                <p>Material de estudo</p>
               </div>
               <div className="feature_element">
                 <img src={Support} alt="" />
@@ -137,7 +135,7 @@ function Website() {
               </div>
               <div className="feature_element">
                 <img src={Instrument} alt="" />
-                <p>Instrumentos e acessórios</p>
+                <p>Ensaios e workshops</p>
               </div>
             </div>
           </section>
@@ -152,14 +150,7 @@ function Website() {
                   <strong>Beat</strong> Strings
                 </h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Lacus, phasellus accumsan massa posuere iaculis a pretium
-                  ullamcorper id. Nam suspendisse feugiat quis tempus sed et.
-                  Vitae magnis viverra nisl faucibus sed sed quis lorem lorem.
-                  Quis quisque justo, posuere lobortis. Dolor mattis bibendum
-                  varius lacus. Ullamcorper duis egestas iaculis orci vel nulla
-                  dolor. Enim nibh aliquet pulvinar cras commodo volutpat
-                  viverra quis. Commodo amet sed velit felis commodo quam.
+                  A Beat Strings foi criada com o intuito de ensinar os seus alunos de forma personalizada e também ajuda-los a colocar em prática todo o conteúdo lecionado inspirando-os desde a técnica de seu instrumento até a prática de sua música favorita. Além disso, a Beats visa promover ensaios e apresentações entre alunos para que desde o início possam se divertir ao tocar em público e com amigos, colocando em prática os conhecimentos adquiridos nas aulas
                 </p>
               </div>
               <div className="content_img guitar"></div>
@@ -203,8 +194,7 @@ function Website() {
                         Auxílio com materiais
                       </h3>
                       <p className="beneficts_item__text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Lacus, phasellus accumsan massa
+                        Temos todo o material utilizado em aula no formato pdf entregue ao aluno de acordo com a utilização em cada aula;
                       </p>
                     </div>
                   </li>
@@ -238,8 +228,7 @@ function Website() {
                         Acompanhamento de estudos
                       </h3>
                       <p className="beneficts_item__text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Lacus, phasellus accumsan massa
+                        Além das aulas, o contato on-line com o professor pode auxiliar no desenvolvimento prático, com foco personalizado de acordo com a necessidade de cada aluno;
                       </p>
                     </div>
                   </li>
@@ -273,8 +262,7 @@ function Website() {
                         Suporte de dúvidas
                       </h3>
                       <p className="beneficts_item__text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Lacus, phasellus accumsan massa
+                        Suporte junto ao professor para sanar dúvidas através do acompanhamento de estudos, melhorando o contato e não sendo necessário apenas a aula para resolver um dúvida; 
                       </p>
                     </div>
                   </li>
@@ -308,8 +296,7 @@ function Website() {
                         Workshops com convidados
                       </h3>
                       <p className="beneficts_item__text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Lacus, phasellus accumsan massa
+                        Workshops, palestras e bancas de audição com músicos e professores
                       </p>
                     </div>
                   </li>
@@ -343,8 +330,7 @@ function Website() {
                         Apresentações Semestrais
                       </h3>
                       <p className="beneficts_item__text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Lacus, phasellus accumsan massa
+                        As apresentações têm o intuito de proporcionar experiências únicas aos alunos para que vivenciem a prática musical da melhor forma;
                       </p>
                     </div>
                   </li>
@@ -382,63 +368,64 @@ function Website() {
           <div className="wrapper shorter">
             <div className="footer_info">
               <h2 className="title_secondary">
-                <strong>Fale</strong> conosco
+                <strong>Converse</strong> com a gente
               </h2>
-              <a
-                href="mailto:contato@beatstrings.com.br"
-                className="footer_info__link"
-              >
-                contato@beatstrings.com.br
-              </a>
-              <a href="tel:+5561999999999" className="footer_info__link">
-                (61) 99999-9999
-              </a>
+              <p>
+                <a
+                  href="mailto:contato@beatstrings.com.br"
+                  className="footer_info__link"
+                >
+                  contato@beatstrings.com.br
+                </a>
+              </p>
+              <p>
+                <a href="tel:+5561981324249" className="footer_info__link">
+                  (61) 98132-4249
+                </a>
+              </p>
+
               <div className="footer_social">
-                {/* </div> */}
-                <a href="#" className="footer_social__item">
+                <a href="https://api.whatsapp.com/send?phone=5561981324249&text=Olá! Gostaria de algumas informações" className="footer_social__item" target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={faWhatsapp} />
                 </a>
-                <a href="#" className="footer_social__item">
+                <a href="https://www.instagram.com/beatstringsmusicstudio/" className="footer_social__item" target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
-                <a href="#" className="footer_social__item">
-                  <FontAwesomeIcon icon={faFacebook} />
-                </a>
+                {/* <a href="#" className="footer_social__item" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faYoutube} />
+                </a> */}
               </div>
             </div>
-            <form action="" className="footer_form" name="contactForm">
-              <div className="input_group">
-                <input
-                  type="text"
-                  name="nome"
-                  id="nome"
-                  placeholder="Digite seu nome"
-                />
-              </div>
-              <div className="input_group">
-                <input
-                  type="mail"
-                  name="email"
-                  placeholder="Digite seu e-mail"
-                />
-              </div>
+            {/* form */}
+            {/* <div className="footer_form" name="contactForm">
               <div className="input_group fullsize">
                 <textarea
                   type="text"
                   name="mensagem"
+                  value={formMessage}
                   placeholder="Qual a sua dúvida?"
                 ></textarea>
               </div>
-              <div className="input_btn">
-                <input type="submit" value="Enviar mensagem" />
+              <div className="input_group">
+                <input
+                  type="text"
+                  name="nome"
+                  id="inputName"
+                  placeholder="Digite seu nome"
+                />
               </div>
-            </form>
+              <div className="input_group clear">
+                <a href={formMessage} className="input_btn" >Enviar dúvida <FontAwesomeIcon icon={faWhatsapp} /></a>
+              </div>
+            </div> */} {/* end form */}
+
+              <LogoFooter className="provisoryLogo"/>
+
           </div>
-          <div className="copyright">
-            <LogoFooter />
+          {/*<div className="copyright">
+             <LogoFooter /> 
             <p>Direitos reservados BeatStrings 2021</p>
-            <span></span>
-          </div>
+          </div>*/}
         </footer>
       </main>
     </>
