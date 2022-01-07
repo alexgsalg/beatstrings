@@ -3,36 +3,36 @@ import sax from '../imgs/inst-sax.png'
 import eletricguitar from '../imgs/inst-eletricguitar.png'
 import guitar from '../imgs/inst-guitar.png'
 import bass from '../imgs/inst-bass.png'
-import piano from '../imgs/inst-piano.png'
+import flute from '../imgs/inst-flute.png'
 import pick from '../imgs/inst-pick.png'
 
 
 const Instruments = [
     {
         id: 0,
-        title: 'Erudito',
+        title: 'Cordas',
         set: [
             {
                 title: 'Violino',
                 img: violin,
             },
-            { title: 'Saxophone', img: sax },
-            {
-                title: 'Teclado / Piano',
-                img: piano,
-            },
-        ],
-    },
-    {
-        id: 1,
-        title: 'Popular',
-        set: [
+            { title: 'Violão', img: guitar },
             {
                 title: 'Guitar',
                 img: eletricguitar,
             },
-            { title: 'Violão', img: guitar },
             { title: 'Baixo', img: bass },
+        ],
+    },
+    {
+        id: 1,
+        title: 'Sopro',
+        set: [
+            { title: 'Saxophone', img: sax },
+            {
+                title: 'Flauta doce',
+                img: flute,
+            },
         ],
     },
     {
@@ -40,15 +40,15 @@ const Instruments = [
         title: 'Teoria musical',
         set: [
             {
-                title: 'Inicialização',
-                img: pick,
-            },
-            {
-                title: 'Teoria avançada',
-                img: pick,
-            },
-            {
                 title: 'Musicalização infantil',
+                img: pick,
+            },
+            {
+                title: 'Inicialização instrumental',
+                img: pick,
+            },
+            {
+                title: 'Básico ao avançado',
                 img: pick,
             },
         ],

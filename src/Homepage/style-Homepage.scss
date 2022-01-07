@@ -116,7 +116,7 @@ footer {
       #32348d 1.52%,
       rgba(51, 51, 51, 0.8) 97.59%
     ),
-    url("../assets/imgs/hero-bg.jpg");
+    url("../assets/imgs/hero-bg_orchestra.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -240,6 +240,12 @@ footer {
   padding: 15rem 2rem;
   border-bottom: 2rem solid $primary;
 
+  @media screen and (max-width: 770px) {
+    .provisoryLogo {
+      margin: 0 auto;
+    }
+  }
+  
   .wrapper {
     @include dflex(space-between, flex-start);
     .shorter {
@@ -248,7 +254,7 @@ footer {
   }
 
   &_info {
-    @extend .grid-1-3;
+    @extend .grid-2-4;
 
     &__link {
       color: $dark;
@@ -280,7 +286,7 @@ footer {
   }
 
   &_form {
-    @extend .grid-2-3;
+    @extend .grid-2-4;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: $gutter;
@@ -296,11 +302,15 @@ footer {
       grid-column: 1/3;
     }
 
+    &.clear {
+      border: none;
+      padding: 0;
+    }
+
     input,
     textarea {
       border: none;
       width: 100%;
-      // height: 5rem;
       padding: 1.5rem;
       @include fontStyle(2rem, 2.7rem);
       transition: all ease-in 150ms;
@@ -314,25 +324,26 @@ footer {
   }
 
   .input_btn {
-    grid-column: 1/3;
-    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 1.5rem 2.5rem;
+    background-color: $primary;
+    color: $light;
+    @include fontStyle(1.85rem, 2.7rem);
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all ease-in 150ms;
 
-    & > input {
-      height: 60px;
-      padding: 1.5rem 2.5rem;
-      background-color: $primary;
-      color: $light;
-      @include fontStyle(1.85rem, 2.7rem);
-      letter-spacing: 0.1rem;
-      text-transform: uppercase;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all ease-in 150ms;
-
-      &:hover {
-        background-color: $secondary;
-      }
+    &:hover {
+      background-color: $secondary;
+    }
+    svg {
+      margin-left: 1rem;
     }
   }
   // COPYRIGHT
