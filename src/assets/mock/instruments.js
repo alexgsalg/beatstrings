@@ -18,7 +18,7 @@ const Instruments = [
             },
             { title: 'Violão', img: guitar },
             {
-                title: 'Guitar',
+                title: 'Guitarra',
                 img: eletricguitar,
             },
             { title: 'Baixo', img: bass },
@@ -40,7 +40,7 @@ const Instruments = [
         title: 'Teoria musical',
         set: [
             {
-                title: 'Musicalização infantil',
+                title: 'Do básico ao avançado',
                 img: pick,
             },
             {
@@ -48,7 +48,7 @@ const Instruments = [
                 img: pick,
             },
             {
-                title: 'Básico ao avançado',
+                title: 'Musicalização infantil',
                 img: pick,
             },
         ],
