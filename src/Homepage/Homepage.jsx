@@ -378,11 +378,11 @@ function Website() {
                   contato@beatstrings.com.br
                 </a>
               </p>
-              <p>
+              {/* <p>
                 <a href="tel:+5561981324249" className="footer_info__link">
                   (61) 98132-4249
                 </a>
-              </p>
+              </p> */}
 
               <div className="footer_social">
                 <a href="https://api.whatsapp.com/send?phone=5561981324249&text=Olá! Gostaria de algumas informações" className="footer_social__item" target="_blank" rel="noreferrer">
