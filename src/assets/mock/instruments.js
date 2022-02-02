@@ -1,10 +1,12 @@
 import violin from '../imgs/inst-violin.png'
 import sax from '../imgs/inst-sax.png'
-import eletricguitar from '../imgs/inst-eletricguitar.png'
+import eletricguitar from '../imgs/inst-eletric-guitar.png'
 import guitar from '../imgs/inst-guitar.png'
 import bass from '../imgs/inst-bass.png'
 import flute from '../imgs/inst-flute.png'
 import pick from '../imgs/inst-pick.png'
+import piano from '../imgs/inst-piano.png'
+import keyboard from '../imgs/inst-keyboard.png'
 
 
 const Instruments = [
@@ -18,7 +20,7 @@ const Instruments = [
             },
             { title: 'Violão', img: guitar },
             {
-                title: 'Guitar',
+                title: 'Guitarra',
                 img: eletricguitar,
             },
             { title: 'Baixo', img: bass },
@@ -26,17 +28,6 @@ const Instruments = [
     },
     {
         id: 1,
-        title: 'Sopro',
-        set: [
-            { title: 'Saxophone', img: sax },
-            {
-                title: 'Flauta doce',
-                img: flute,
-            },
-        ],
-    },
-    {
-        id: 2,
         title: 'Teoria musical',
         set: [
             {
@@ -53,6 +44,29 @@ const Instruments = [
             },
         ],
     },
+    {
+        id: 2,
+        title: 'Sopro',
+        set: [
+            { title: 'Saxophone', img: sax },
+            {
+                title: 'Flauta doce',
+                img: flute,
+            },
+        ],
+    },
+    {
+        id: 3,
+        title: 'Teclas',
+        set: [
+            { title: 'Piano', img: piano },
+            {
+                title: 'Teclado',
+                img: keyboard,
+            },
+        ],
+    },
+    
 ];
 
 export default Instruments;

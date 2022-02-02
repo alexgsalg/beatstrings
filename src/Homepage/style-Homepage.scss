@@ -116,7 +116,7 @@ footer {
       #32348d 1.52%,
       rgba(51, 51, 51, 0.8) 97.59%
     ),
-    url("../assets/imgs/hero-bg_orchestra.jpg");
+    url("../assets/imgs/violin-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -193,22 +193,49 @@ footer {
 
 // INSTRUMENTS
 .instruments {
+  position: relative;
   background-color: $bg_light;
+  padding-bottom: 20rem;
+
+  &::before {
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    right: 0;
+    height: 15vh;
+    content: '';
+    background-color: #efefef;
+    -webkit-clip-path: polygon(7% 80%, 0% 100%, 100% 100%);
+    clip-path: polygon(14% 40%, 0% 100%, 100% 100%);
+  }
+  
+  &::after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 15vh;
+    content: '';
+    background-color: $light;
+    -webkit-clip-path: polygon(7% 80%, 0% 100%, 100% 100%);
+    clip-path: polygon(15% 55%, 0% 100%, 100% 100%);
+  }
 
   .grid {
     justify-content: space-between;
     align-items: stretch;
   }
   .instruments_box {
-    @extend .grid-1-3;
     background-color: $light;
     border-radius: 0.5rem;
     padding: 2.5rem;
   }
 }
+
 .genre {
   background: $light;
-  width: 31%;
+  @extend .grid-2-4;
+  // width: 31%;
   padding: 3rem 2rem 1rem;
   border-radius: 10px;
 
