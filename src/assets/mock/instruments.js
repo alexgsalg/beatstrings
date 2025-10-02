@@ -7,6 +7,7 @@ import flute from '../imgs/inst-flute.png'
 import pick from '../imgs/inst-pick.png'
 import piano from '../imgs/inst-piano.png'
 import keyboard from '../imgs/inst-keyboard.png'
+import microphone from '../imgs/inst-microphone.png'
 
 
 const Instruments = [
@@ -42,6 +43,10 @@ const Instruments = [
                 title: 'Musicalização infantil',
                 img: pick,
             },
+            {
+                title: 'Harmonia',
+                img: pick,
+            },
         ],
     },
     {
@@ -64,6 +69,15 @@ const Instruments = [
                 title: 'Teclado',
                 img: keyboard,
             },
+        ],
+    },
+    {
+        id: 4,
+        title: 'Canto',
+        set: [
+            { title: 'Canto Popular', img: microphone },
+            { title: 'Canto Erudito', img: microphone },
+            { title: 'Coral', img: microphone },
         ],
     },
     
